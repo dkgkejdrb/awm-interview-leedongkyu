@@ -16,20 +16,20 @@ export async function POST(request: Request) {
         const HTML = await request.text();
         // console.log(HTML)
         const ONE_SHOT = getPrompt('manager/orders/search/prompt/one-shot.txt');
-        
+
         const prompt = INSTRUCTION + HTML + ONE_SHOT;
 
         const completion = await openai.chat.completions.create(
-        {
-            model: agentParams.model,
-            messages: [{ "role": "user", "content": prompt }],
-            temperature: agentParams.temperature,
-            max_tokens: agentParams.max_tokens,
-        }
+            {
+                model: agentParams.model,
+                messages: [{ "role": "user", "content": prompt }],
+                temperature: agentParams.temperature,
+                max_tokens: agentParams.max_tokens,
+            }
         );
 
         // console.log(completion.choices[0].message.content);
-        
+
         // completion과 choices가 null이 아닌지 확인
         if (!completion || !completion.choices || !completion.choices[0].message || !completion.choices[0].message.content) {
             throw new Error("Invalid completion response from OpenAI API.");
@@ -42,7 +42,7 @@ export async function POST(request: Request) {
         // JSON => String 출력
         // return NextResponse.json({ message: JSON.stringify(actionList, null, 2) });
         // JSON 출력
-        return NextResponse.json({ message: actionList });
+        return NextResponse.json({ actionList: actionList });
     }
 
     return await run()
