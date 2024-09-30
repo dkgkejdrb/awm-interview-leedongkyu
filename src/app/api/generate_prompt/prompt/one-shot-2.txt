@@ -1,0 +1,244 @@
+## Concrete Examples
+
+<think>
+I need to access the login page first to start the process. I will navigate to the URL of the admin login page. 
+</think>
+<action> 
+navigate_to_url("https://www.biteme.co.kr/manager/login")
+</action> 
+
+<think>
+To log in, I need to enter my user ID and password. I will wait for the input field with id `m_id` to appear.
+</think> 
+<action>
+wait_for_element("id", "m_id", timeout=10)
+</action>
+
+<think>
+I will enter my user ID into the input field with id `m_id`.
+</think>
+<action> 
+input_text("id", "m_id", "your_id") 
+</action>
+
+<think>
+Next, I will enter my password into the input field with id `m_pw`.
+</think>
+<action>
+input_text("id", "m_pw", "your_password")
+</action>
+
+<think>
+Now, I will click the login button to authenticate. If an alert appears, I will handle it.
+</think>
+<action>
+click_element("id", "loginBtn")
+</action>
+
+<think>
+If an alert appears, I need to accept it within 10 seconds to proceed.
+</think>
+<action>
+handle_alert("accept", timeout=10)
+</action>
+
+<think>
+Once logged in, I need to wait for the main menu bar (id `gnb`) to appear, indicating that the page has fully loaded.
+</think>
+<action>
+wait_for_element("id", "gnb", timeout=10)
+</action>
+
+<think>
+Now I will navigate to the main admin page to access the order management section.
+</think>
+<action>
+navigate_to_url("https://www.biteme.co.kr/manager", timeout=15)
+</action>
+
+<think>
+To access the order management page, I need to click on the corresponding menu item using its XPath selector.
+</think>
+<action>
+click_element("xpath", "//*[@id='gnb']/li[2]/a")
+</action>
+
+<think>
+I will now navigate to the specific order management URL to view the list of orders.
+</think>
+<action>
+navigate_to_url("https://www.biteme.co.kr/manager/order/order_product/order_product_list", timeout=15)
+</action>
+
+<think>
+To filter the orders, I need to wait for the checkbox with CSS selector `input#order_state_cd[value='20']` to appear, indicating that the page has loaded.
+</think>
+<action>
+wait_for_element("css", "input#order_state_cd[value='20']", timeout=10)
+</action>
+
+<think>
+I will now click on the checkbox for order state 20 to filter the orders.
+</think>
+<action>
+click_element("css", "input#order_state_cd[value='20']")
+</action>
+
+<think>
+Next, I will click on the checkbox for order state 30 to further filter the orders.
+</think>
+<action>
+click_element("css", "input#order_state_cd[value='30']")
+</action>
+
+<think>
+To apply the filters, I will click the submit button.
+</think>
+<action>
+click_element("css", "button.btn_txt.btn_black[onclick='shSubmit();']")
+</action>
+
+<think>
+I will wait for the table containing the filtered orders to appear.
+</think>
+<action>
+wait_for_element("class", "write_table", timeout=10)
+</action>
+
+<think>
+I will click on the Excel download button to download the filtered orders as an Excel file.
+</think>
+<action>
+click_element("css", "button.btn_txt.btn_exel[onclick=\"downExcelFn('order_state35');\"]")
+</action>
+
+<think>
+I need to monitor the file download process to ensure the file is downloaded correctly. I will check the download directory periodically.
+</think>
+<action>
+monitor_file_downloads("download_dir='/django_rest_framework/service_crawler/download'", timeout=300, poll_interval=2)
+</action>
+
+
+
+
+## Summary Workflows
+
+<think>
+I need to access the login page first to start the process. I will navigate to the URL of the admin login page. 
+</think>
+<action> 
+navigate_to_url("https://www.biteme.co.kr/manager/login")
+</action> 
+
+<think>
+To log in, I need to enter my user ID and password. I will wait for the input field with id `m_id` to appear.
+</think> 
+<action>
+wait_for_element("id", "m_id", timeout=10)
+</action>
+
+<think>
+I will enter my user ID into the input field with id `m_id`.
+</think>
+<action> 
+input_text("id", "m_id", "your_id") 
+</action>
+
+<think>
+Next, I will enter my password into the input field with id `m_pw`.
+</think>
+<action>
+input_text("id", "m_pw", "your_password")
+</action>
+
+<think>
+Now, I will click the login button to authenticate. If an alert appears, I will handle it.
+</think>
+<action>
+click_element("id", "loginBtn")
+</action>
+
+<think>
+If an alert appears, I need to accept it within 10 seconds to proceed.
+</think>
+<action>
+handle_alert("accept", timeout=10)
+</action>
+
+<think>
+Once logged in, I need to wait for the main menu bar (id `gnb`) to appear, indicating that the page has fully loaded.
+</think>
+<action>
+wait_for_element("id", "gnb", timeout=10)
+</action>
+
+<think>
+Now I will navigate to the main admin page to access the order management section.
+</think>
+<action>
+navigate_to_url("https://www.biteme.co.kr/manager", timeout=15)
+</action>
+
+<think>
+To access the order management page, I need to click on the corresponding menu item using its XPath selector.
+</think>
+<action>
+click_element("xpath", "//*[@id='gnb']/li[2]/a")
+</action>
+
+<think>
+I will now navigate to the specific order management URL to view the list of orders.
+</think>
+<action>
+navigate_to_url("https://www.biteme.co.kr/manager/order/order_product/order_product_list", timeout=15)
+</action>
+
+<think>
+To filter the orders, I need to wait for the checkbox with CSS selector `input#order_state_cd[value='20']` to appear, indicating that the page has loaded.
+</think>
+<action>
+wait_for_element("css", "input#order_state_cd[value='20']", timeout=10)
+</action>
+
+<think>
+I will now click on the checkbox for order state 20 to filter the orders.
+</think>
+<action>
+click_element("css", "input#order_state_cd[value='20']")
+</action>
+
+<think>
+Next, I will click on the checkbox for order state 30 to further filter the orders.
+</think>
+<action>
+click_element("css", "input#order_state_cd[value='30']")
+</action>
+
+<think>
+To apply the filters, I will click the submit button.
+</think>
+<action>
+click_element("css", "button.btn_txt.btn_black[onclick='shSubmit();']")
+</action>
+
+<think>
+I will wait for the table containing the filtered orders to appear.
+</think>
+<action>
+wait_for_element("class", "write_table", timeout=10)
+</action>
+
+<think>
+I will click on the Excel download button to download the filtered orders as an Excel file.
+</think>
+<action>
+click_element("css", "button.btn_txt.btn_exel[onclick=\"downExcelFn('order_state35');\"]")
+</action>
+
+<think>
+I need to monitor the file download process to ensure the file is downloaded correctly. I will check the download directory periodically.
+</think>
+<action>
+monitor_file_downloads("download_dir='/django_rest_framework/service_crawler/download'", timeout=300, poll_interval=2)
+</action>

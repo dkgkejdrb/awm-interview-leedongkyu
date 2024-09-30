@@ -1,0 +1,49 @@
+## Concrete Examples
+
+Query: Navigate to the admin page and click a specific button to go to the next page.
+Acitions:
+<think>
+Once logged in, I need to wait for the main menu bar (id `gnb`) to appear, indicating that the page has fully loaded.
+</think>
+<action>
+wait_for_element("id", "gnb", timeout=10)
+</action>
+
+<think>
+Now I will navigate to the main admin page to access the order management section.
+</think>
+<action>
+navigate_to_url("https://www.biteme.co.kr/manager", timeout=15)
+</action>
+
+<think>
+To access the order management page, I need to click on the corresponding menu item using its XPath selector.
+</think>
+<action>
+click_element("xpath", "//*[@id='gnb']/li[2]/a")
+</action>
+
+
+## Summary Workflows
+
+Workflow: Click a specific button on the second screen
+<think>
+Once logged in, I need to wait for the main menu bar (id `gnb`) to appear, indicating that the page has fully loaded.
+</think>
+<action>
+wait_for_element("id", "gnb", timeout=10)
+</action>
+
+<think>
+Now I will navigate to the main admin page to access the order management section.
+</think>
+<action>
+navigate_to_url("https://www.biteme.co.kr/manager", timeout=15)
+</action>
+
+<think>
+To access the order management page, I need to click on the corresponding menu item using its XPath selector.
+</think>
+<action>
+click_element("xpath", "//*[@id='gnb']/li[2]/a")
+</action>

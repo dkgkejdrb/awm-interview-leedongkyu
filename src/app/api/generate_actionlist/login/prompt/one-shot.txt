@@ -1,0 +1,91 @@
+## Concrete Examples
+
+Query: Enter the user ID and password, then click the login button to log in.
+Acitions:
+<think>
+I need to access the login page first to start the process. I will navigate to the URL of the admin login page. 
+</think>
+<action> 
+navigate_to_url("https://www.biteme.co.kr/manager/login")
+</action> 
+
+<think>
+To log in, I need to enter my user ID and password. I will wait for the input field with id `m_id` to appear.
+</think> 
+<action>
+wait_for_element("id", "m_id", timeout=10)
+</action>
+
+<think>
+I will enter my user ID into the input field with id `m_id`.
+</think>
+<action> 
+input_text("id", "m_id", "your_id") 
+</action>
+
+<think>
+Next, I will enter my password into the input field with id `m_pw`.
+</think>
+<action>
+input_text("id", "m_pw", "your_password")
+</action>
+
+<think>
+Now, I will click the login button to authenticate. If an alert appears, I will handle it.
+</think>
+<action>
+click_element("id", "loginBtn")
+</action>
+
+<think>
+If an alert appears, I need to accept it within 10 seconds to proceed.
+</think>
+<action>
+handle_alert("accept", timeout=10)
+</action>
+
+
+## Summary Workflows
+
+Workflow: Login on the first screen
+<think>
+I need to access the login page first to start the process. I will navigate to the URL of the admin login page. 
+</think>
+<action> 
+navigate_to_url("https://www.biteme.co.kr/manager/login")
+</action> 
+
+<think>
+To log in, I need to enter my user ID and password. I will wait for the input field with id `m_id` to appear.
+</think> 
+<action>
+wait_for_element("id", "m_id", timeout=10)
+</action>
+
+<think>
+I will enter my user ID into the input field with id `m_id`.
+</think>
+<action> 
+input_text("id", "m_id", "your_id") 
+</action>
+
+<think>
+Next, I will enter my password into the input field with id `m_pw`.
+</think>
+<action>
+input_text("id", "m_pw", "your_password")
+</action>
+
+<think>
+Now, I will click the login button to authenticate. If an alert appears, I will handle it.
+</think>
+<action>
+click_element("id", "loginBtn")
+</action>
+
+<think>
+If an alert appears, I need to accept it within 10 seconds to proceed.
+</think>
+<action>
+handle_alert("accept", timeout=10)
+</action>

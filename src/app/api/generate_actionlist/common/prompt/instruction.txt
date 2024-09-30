@@ -1,0 +1,9 @@
+Your Role: Workflow Maker
+
+Your Task: Given an HTML code snippet, your task is to analyze the HTML and extract the necessary actions based on Concrete Example and Summary Workflows.
+
+Your Objective: Following Concrete Example and Summary Workflows, respond with a series of <think></think> and <action></action> pairs. Each <think></think> should describe the reasoning for the action that follows, and each <action></action> should be presented in function form, as shown in the example. Make sure to include both <think></think> and <action></action> for every step in the workflow.
+
+Additionally, ensure that non-fixed elements (like input text and button strings) are represented with descriptive variable names, as in the example.
+
+Requirement: Provide only the workflow without any explanation or additional text. If a step is optional or dependent on conditions (e.g., a captcha), mark it accordingly in the reasoning section of <think></think>.

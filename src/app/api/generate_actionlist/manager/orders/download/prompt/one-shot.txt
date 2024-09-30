@@ -1,0 +1,49 @@
+## Concrete Examples
+
+Query: Click the Excel file download button on the search results page.
+Acitions:
+<think>
+I will wait for the table containing the filtered orders to appear.
+</think>
+<action>
+wait_for_element("class", "write_table", timeout=10)
+</action>
+
+<think>
+I will click on the Excel download button to download the filtered orders as an Excel file.
+</think>
+<action>
+click_element("css", "button.btn_txt.btn_exel[onclick=\"downExcelFn('order_state35');\"]")
+</action>
+
+<think>
+I need to monitor the file download process to ensure the file is downloaded correctly. I will check the download directory periodically.
+</think>
+<action>
+monitor_file_downloads("download_dir='/django_rest_framework/service_crawler/download'", timeout=300, poll_interval=2)
+</action>
+
+
+## Summary Workflows
+
+Workflow: Click a download button on the result screen
+<think>
+I will wait for the table containing the filtered orders to appear.
+</think>
+<action>
+wait_for_element("class", "write_table", timeout=10)
+</action>
+
+<think>
+I will click on the Excel download button to download the filtered orders as an Excel file.
+</think>
+<action>
+click_element("css", "button.btn_txt.btn_exel[onclick=\"downExcelFn('order_state35');\"]")
+</action>
+
+<think>
+I need to monitor the file download process to ensure the file is downloaded correctly. I will check the download directory periodically.
+</think>
+<action>
+monitor_file_downloads("download_dir='/django_rest_framework/service_crawler/download'", timeout=300, poll_interval=2)
+</action>

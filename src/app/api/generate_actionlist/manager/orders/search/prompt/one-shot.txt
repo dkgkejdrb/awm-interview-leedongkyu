@@ -1,0 +1,77 @@
+## Concrete Examples
+
+Query: Set the order status conditions on the order management page and search the order history based on these conditions.
+Acitions:
+<think>
+I will now navigate to the specific order management URL to view the list of orders.
+</think>
+<action>
+navigate_to_url("https://www.biteme.co.kr/manager/order/order_product/order_product_list", timeout=15)
+</action>
+
+<think>
+To filter the orders, I need to wait for the checkbox with CSS selector `input#order_state_cd[value='20']` to appear, indicating that the page has loaded.
+</think>
+<action>
+wait_for_element("css", "input#order_state_cd[value='20']", timeout=10)
+</action>
+
+<think>
+I will now click on the checkbox for order state 20 to filter the orders.
+</think>
+<action>
+click_element("css", "input#order_state_cd[value='20']")
+</action>
+
+<think>
+Next, I will click on the checkbox for order state 30 to further filter the orders.
+</think>
+<action>
+click_element("css", "input#order_state_cd[value='30']")
+</action>
+
+<think>
+To apply the filters, I will click the submit button.
+</think>
+<action>
+click_element("css", "button.btn_txt.btn_black[onclick='shSubmit();']")
+</action>
+
+
+## Summary Workflows
+
+Workflow: Search after setting conditions on the third screen
+<think>
+I will now navigate to the specific order management URL to view the list of orders.
+</think>
+<action>
+navigate_to_url("https://www.biteme.co.kr/manager/order/order_product/order_product_list", timeout=15)
+</action>
+
+<think>
+To filter the orders, I need to wait for the checkbox with CSS selector `input#order_state_cd[value='20']` to appear, indicating that the page has loaded.
+</think>
+<action>
+wait_for_element("css", "input#order_state_cd[value='20']", timeout=10)
+</action>
+
+<think>
+I will now click on the checkbox for order state 20 to filter the orders.
+</think>
+<action>
+click_element("css", "input#order_state_cd[value='20']")
+</action>
+
+<think>
+Next, I will click on the checkbox for order state 30 to further filter the orders.
+</think>
+<action>
+click_element("css", "input#order_state_cd[value='30']")
+</action>
+
+<think>
+To apply the filters, I will click the submit button.
+</think>
+<action>
+click_element("css", "button.btn_txt.btn_black[onclick='shSubmit();']")
+</action>
